@@ -1,0 +1,21 @@
+<div class="container well">
+    <div class="form-group">
+      <h1 class="center">Secret Santa</h1>
+      <span class="text-secondary">After adding participants hit send to send out emails to all players</span>
+    </div>
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input id="name" class="form-control" type="text" [formControl]="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address: </label>
+      <input id="email" class="form-control" type="text" [formControl]="emailAddress">
+    </div>
+    <ul>
+      <li *ngFor="let participant of participants">
+        {{participant.name}}
+      </li>
+    </ul>
+    <button type="button" class="form-control btn btn-primary" (click)="addParticipant()">Add Participant</button>
+    <button type="button" class="form-control btn btn-primary" (click)="sendEmail()">Send it</button>
+  </div>
